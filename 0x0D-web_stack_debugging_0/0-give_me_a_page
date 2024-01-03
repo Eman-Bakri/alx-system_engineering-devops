@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# let apache run the container
+/etc/init.d/apache2 start

@@ -1,8 +1,16 @@
 #!/usr/bin/env bash
 #redirecting your server to another page.
 
-sudo apt-get -y install nginx
-sudo sh -c 'echo "Hello World!" > /var/www/html/index.nginx-debian.html'
-new_page="\n\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n"
-sudo sed -i "47s|.*|$new_page|" /etc/nginx/sites-available/default
+sudo apt-get update -y
+
+sudo apt-get install nginx -y
+
+echo "Hello World!" | sudo tee /var/www/html/index.html > /dev/null
+
+redirect_rule="\\\n\tlocation = /redirect_me {\n\t\t return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n"
+
+sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bakup
+
+sudo sed -i "53i $redirect_rule" /etc/nginx/sites-available/default
+
 sudo service nginx restart

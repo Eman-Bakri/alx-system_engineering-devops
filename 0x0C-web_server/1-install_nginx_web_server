@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# A script to install nginx server.
+
+sudo apt-get update -y
+
+# Install nginx
+sudo apt-get install nginx -y
+
+#default index.html
+echo 'Hello World!' > /var/www/html/index.html
+
+service nginx restart

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Configuration to have a 404 error page
+# Not Found 404
+redirect_rule="\\\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
+error_rule="error_page 404 /404.html;"
+
+apt-get update
+apt-get install -y nginx
+
+echo "Hello World!" > /var/www/html/index.html
+sed -i "30i $redirect_rule" /etc/nginx/sites-available/default
+echo "Ceci n'est pas une page" > /var/www/html/404.html
+sed -i "48i $error_rule" /etc/nginx/sites-available/default
+service nginx restart

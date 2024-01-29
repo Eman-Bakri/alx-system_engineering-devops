@@ -13,4 +13,4 @@ if __name__ == '__main__':
     print("Employee {} is done with tasks({}/{}):".format(empl_id.get("name"),
                                                           len(is_done),
                                                           len(to_do)))
-    [print("\t {}".format(title)) for title in completed]
+    [print("\t {}".format(title)) for title in is_done]

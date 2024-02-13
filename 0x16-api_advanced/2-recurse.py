@@ -8,8 +8,12 @@ def recurse(subreddit, hot_list=[], a=""):
     """recursive function that queries the Reddit API and returns a
     list containing the titles"""
 
-    headers = {'User-Agent': 'MyPythonScript/1.0'}
-    url = 'https://www.reddit.com/r/{subreddit}/hot.json'.format(subreddit)
+    headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)\
+            AppleWebKit/537.36 (KHTML, like Gecko)\
+            Chrome/102.0.0.0 Safari/537.36'
+            }
+    url = "https://www.reddit.com/r/{subreddit}/hot.json"
     request = requests.get(url=url, headers=headers, allow_redirects=False)
     if request.status_code != 200:
         return None

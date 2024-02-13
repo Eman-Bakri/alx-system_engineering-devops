@@ -9,7 +9,7 @@ def recurse(subreddit, hot_list=[], a=""):
     list containing the titles"""
 
     headers = {'User-Agent': 'MyPythonScript/1.0'}
-    url = f'https://www.reddit.com/r/{subreddit}/hot.json?limit=100&after={a}'
+    url = 'https://www.reddit.com/r/{subreddit}/hot.json'.format(subreddit)
     request = requests.get(url=url, headers=headers, allow_redirects=False)
     if request.status_code != 200:
         return None

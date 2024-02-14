@@ -20,7 +20,7 @@ def count_words(subreddit, word_list, word_count={}, after=None):
              for child in info
              .get("data")
              .get("children")]
-    if not  title_list:
+    if not title_list:
         return None
 
     word_list = list(dict.fromkeys(word_list))

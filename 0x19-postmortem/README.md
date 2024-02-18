@@ -1,6 +1,6 @@
 
 # Postmortem Incident Report
-----------------------------------
+
 ## An outage in API infrastructure
 ![Website is down.](https://preview.redd.it/6ll9ab69kou51.png?width=1080&crop=smart&auto=webp&s=701c1625ad2c2af7d40020f2e7aa4c35ce05ed98))
 ### Issue Summary:

@@ -9,7 +9,7 @@ User=ubuntu
 # Set working directory
 WorkingDirectory=/home/ubuntu/AirBnB_clone_v4
 # Start Gunicorn with 3 workers, binding to 0.0.0.0:5003
-ExecStart=/usr/bin/gunicorn tmux new-session -d 'gunicorn --bind 0.0.0.0:5003 web_dynamic.2-hbnb:app'
+ExecStart=gunicorn --workers 3 --bind 0.0.0.0:5003 web_dynamic.2-hbnb:app
 # Restart the service if it fails
 Restart=always
 # Redirect standard output to syslog
